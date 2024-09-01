@@ -1,0 +1,169 @@
+/* static/css/style.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 90%; /* Change to 90% for better mobile support */
+    max-width: 320px; /* Retain max-width for larger screens */
+    max-height: 500px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevent overflow */
+    transition: transform 0.3s ease;
+}
+
+.chat-header {
+    background-color: #9409b0;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+}
+
+.chat-header h4 {
+    margin: 0;
+    font-size: 1.2em;
+    transition: opacity 0.3s; /* Smooth transition for minimized state */
+}
+
+.chat-header button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.chat-box {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ccc;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    transition: max-height 0.3s ease; /* Smooth transition */
+}
+
+.message {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 80%;
+    line-height: 1.4; /* Increased line height for better readability */
+}
+
+.user {
+    background-color: #9409b0;
+    color: white;
+    align-self: flex-end;
+}
+
+.bot {
+    background-color: #e0e0e0;
+    color: black;
+    align-self: flex-start;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    background-color: #ffffff; /* Background for input area */
+}
+
+#userMessage {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s; /* Transition effect */
+}
+
+#userMessage:focus {
+    border-color: #007bff; /* Highlight border on focus */
+}
+
+#sendMessage {
+    background-color: #9409b0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s; /* Transition effect */
+}
+
+#sendMessage:hover {
+    background-color: #b30077; /* Darker shade on hover */
+}
+
+/* Hide chat box when minimized */
+.chat-box.hidden {
+    display: none; /* Completely hide the chat box */
+}
+
+.chat-input.minimized {
+    display: none; /* Hide the input area when minimized */
+}
+
+/* Additional style for minimized state */
+.chat-widget.minimized {
+    height: 50px; /* Reduced height when minimized */
+    transition: height 0.3s ease; /* Smooth transition */
+}
+
+.chat-header.minimized {
+    justify-content: center; /* Center the title when minimized */
+    opacity: 0.5; /* Dim the title when minimized */
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .chat-widget {
+        width: 90%; /* Use 90% width for mobile devices */
+    }
+
+    .chat-header h4 {
+        font-size: 1.5em; /* Adjust header font size for mobile */
+    }
+
+    #sendMessage {
+        padding: 10px 10px; /* Adjust button padding for smaller screens */
+        font-size: 0.9em; /* Adjust button font size */
+    }
+
+    #userMessage {
+        font-size: 0.9em; /* Adjust input font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-header h4 {
+        font-size: 1.2em; /* Further adjust for very small screens */
+    }
+
+    #sendMessage {
+        font-size: 0.9em; /* Further adjust send button size */
+    }
+
+    #userMessage {
+        font-size: 0.9em; /* Further adjust input size */
+    }
+}
