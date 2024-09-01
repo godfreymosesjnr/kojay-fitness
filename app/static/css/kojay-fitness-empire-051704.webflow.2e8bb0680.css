@@ -2349,6 +2349,12 @@ h3 {
 }
 
 @media screen and (max-width: 767px) {
+
+  .form-content-wrapper {
+    text-align: center; /* Center the text inside the wrapper */
+    margin: 0 auto; /* Center the wrapper itself */
+  }
+  
   h2 {
     font-size: 25px;
   }
@@ -2413,6 +2419,12 @@ h3 {
 }
 
 @media screen and (max-width: 479px) {
+
+  .form-content-wrapper {
+    text-align: center; /* Center the text inside the wrapper */
+    margin: 0 auto; /* Center the wrapper itself */
+  }
+  
   .button {
     text-align: center;
   }
